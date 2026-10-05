@@ -1,0 +1,40 @@
+workflows:
+  android-apk:
+    name: IDBI Banking UI Demo APK
+    max_build_duration: 60
+
+    environment:
+      flutter: stable
+
+    scripts:
+      - name: Get Flutter packages
+        script: |
+          cd IDBI_Bank
+          flutter pub get
+
+      - name: Create Android platform
+        script: |
+          cd IDBI_Bank
+          flutter create --platforms=android .
+
+      - name: Set Android demo app name
+        script: |
+          cd IDBI_Bank
+          python3 - <<'PY'
+          from pathlib import Path
+          p = Path("android/app/src/main/AndroidManifest.xml")
+          s = p.read_text()
+          s = s.replace(
+              'android:label="idbi_style_banking_demo"',
+              'android:label="IDBI Bank UI Demo"'
+          )
+          p.write_text(s)
+          PY
+
+      - name: Build release APK
+        script: |
+          cd IDBI_Bank
+          flutter build apk --release
+
+    artifacts:
+      - IDBI_Bank/build/app/outputs/flutter-apk/*.apk
