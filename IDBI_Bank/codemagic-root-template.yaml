@@ -13,14 +13,14 @@ workflows:
         script: |
           cd Banking
           flutter create --platforms=android .
-      - name: Set safe demo Android app name
+      - name: Set Android app name
         script: |
           cd Banking
           python3 - <<'PY'
           from pathlib import Path
           p = Path("android/app/src/main/AndroidManifest.xml")
           s = p.read_text()
-          s = s.replace('android:label="idbi_style_banking_demo"', 'android:label="IDBI Bank UI Demo"')
+          s = s.replace('android:label="idbi_Bank"', 'android:label="IDBI Bank"')
           p.write_text(s)
           PY
       - name: Build release APK
