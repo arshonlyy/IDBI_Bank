@@ -1,5 +1,5 @@
-name: idbi_style_banking_demo
-description: A clearly labeled student banking UI demo inspired by modern mobile banking patterns.
+name: idbi_banking
+description: IDBI Bank.
 publish_to: 'none'
 version: 2.0.0+2
 
