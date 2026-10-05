@@ -41,7 +41,7 @@ class DemoMark extends StatelessWidget {
         color: const Color(0xFFFFF1C9),
         padding: const EdgeInsets.symmetric(vertical: 6, horizontal: 12),
         child: const Text(
-          'STUDENT UI DEMO • NOT THE OFFICIAL IDBI BANK APP • DO NOT ENTER REAL CREDENTIALS',
+          '',
           textAlign: TextAlign.center,
           style: TextStyle(fontSize: 10, fontWeight: FontWeight.w800),
         ),
@@ -140,7 +140,7 @@ class _LoginPageState extends State<LoginPage> {
                       const SizedBox(height: 18),
                       const Text('Welcome', style: TextStyle(fontSize: 28, fontWeight: FontWeight.w800)),
                       const SizedBox(height: 6),
-                      const Text('Sign in to the local student demo', style: TextStyle(color: Colors.black54)),
+                      const Text('Sign in to IDBI Bank', style: TextStyle(color: Colors.black54)),
                       const SizedBox(height: 32),
                       TextField(
                         controller: pin,
@@ -148,7 +148,7 @@ class _LoginPageState extends State<LoginPage> {
                         obscureText: true,
                         keyboardType: TextInputType.number,
                         decoration: const InputDecoration(
-                          labelText: 'Demo MPIN',
+                          labelText: 'Enter your MPIN',
                           hintText: 'Enter any 4 digits',
                           prefixIcon: Icon(Icons.lock_outline),
                           border: OutlineInputBorder(),
@@ -163,7 +163,7 @@ class _LoginPageState extends State<LoginPage> {
                               Navigator.pushReplacement(context, MaterialPageRoute(builder: (_) => const HomeShell()));
                             } else {
                               ScaffoldMessenger.of(context).showSnackBar(
-                                const SnackBar(content: Text('For this demo, enter any 4 digits.')),
+                                const SnackBar(content: Text('For this bank, enter any 4 digits.')),
                               );
                             }
                           },
@@ -176,12 +176,12 @@ class _LoginPageState extends State<LoginPage> {
                         children: [
                           Icon(Icons.fingerprint, size: 28, color: idbiGreen),
                           SizedBox(width: 8),
-                          Text('Demo biometric login', style: TextStyle(color: idbiGreen, fontWeight: FontWeight.w700)),
+                          Text('Biometric login', style: TextStyle(color: idbiGreen, fontWeight: FontWeight.w700)),
                         ],
                       ),
                       const SizedBox(height: 26),
                       const Text(
-                        'No connection to IDBI Bank or any payment network. Never enter a real MPIN, OTP, password or account credential.',
+                        'Connection to IDBI Bank or any payment network. Never enter a real MPIN, OTP, password or account credential.',
                         textAlign: TextAlign.center,
                         style: TextStyle(fontSize: 12, color: Colors.black54),
                       ),
@@ -251,7 +251,7 @@ class DashboardPage extends StatelessWidget {
             const SizedBox(width: 12),
             const Expanded(child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
               Text('Good day,', style: TextStyle(color: Colors.black54)),
-              Text('Demo Customer', style: TextStyle(fontSize: 20, fontWeight: FontWeight.w800)),
+              Text('Mirza Arshi abbas', style: TextStyle(fontSize: 20, fontWeight: FontWeight.w800)),
             ])),
             IconButton(onPressed: () {}, icon: const Icon(Icons.notifications_none)),
           ]),
@@ -272,7 +272,7 @@ class DashboardPage extends StatelessWidget {
               SizedBox(height: 4),
               Text('₹ 24,860.50', style: TextStyle(color: Colors.white, fontSize: 30, fontWeight: FontWeight.w800)),
               SizedBox(height: 8),
-              Text('A/C •••• 4821', style: TextStyle(color: Colors.white70)),
+              Text('A/C •••• 0256', style: TextStyle(color: Colors.white70)),
               SizedBox(height: 18),
               Divider(color: Colors.white24),
               SizedBox(height: 8),
@@ -281,7 +281,7 @@ class DashboardPage extends StatelessWidget {
                 Text('₹ 20,000.00', style: TextStyle(color: Colors.white, fontSize: 18, fontWeight: FontWeight.w800)),
               ]),
               SizedBox(height: 5),
-              Text('Fictional student-project values', style: TextStyle(color: Colors.white60, fontSize: 11)),
+              Text('Amount', style: TextStyle(color: Colors.white60, fontSize: 11)),
             ]),
           ),
           const SizedBox(height: 22),
@@ -297,9 +297,9 @@ class DashboardPage extends StatelessWidget {
           ]),
           const SizedBox(height: 22),
           const Text('Recent Transactions', style: TextStyle(fontSize: 18, fontWeight: FontWeight.w800)),
-          const TransactionTile(title: 'Demo UPI Payment', subtitle: '05 Oct • Simulation', amount: '- ₹420.00'),
-          const TransactionTile(title: 'Demo Credit', subtitle: '04 Oct • Simulation', amount: '+ ₹2,500.00'),
-          const TransactionTile(title: 'Demo Recharge', subtitle: '03 Oct • Simulation', amount: '- ₹299.00'),
+          const TransactionTile(title: 'MACHINDRE VINIT NILESH', subtitle: '01 Oct, 2026 • UPI/615092084456', amount: '+ ₹20,000.00'),
+          const TransactionTile(title: 'MAFROOZA BANU', subtitle: '30 Sep, 2026 • UPI/663989482173', amount: '- ₹100.00'),
+          const TransactionTile(title: 'NAZIYA ZEHRA', subtitle: '30 Sep, 2026 • UPI/663876995223', amount: '- ₹610.00'),
         ],
       );
 }
@@ -314,7 +314,7 @@ class AccountsPage extends StatelessWidget {
           const SizedBox(height: 14),
           Card(child: ListTile(
             leading: const CircleAvatar(backgroundColor: Color(0xFFDDEFE6), child: Icon(Icons.account_balance, color: idbiGreen)),
-            title: const Text('Savings Account •••• 4821', style: TextStyle(fontWeight: FontWeight.w700)),
+            title: const Text('Savings Account •••• 0256', style: TextStyle(fontWeight: FontWeight.w700)),
             subtitle: const Text('Available ₹24,860.50  •  Lien ₹20,000.00'),
             trailing: const Icon(Icons.chevron_right),
             onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const TransactionsPage())),
@@ -348,13 +348,14 @@ class TransactionsPage extends StatelessWidget {
         body: ListView(padding: const EdgeInsets.all(18), children: const [
           DemoMark(),
           SizedBox(height: 16),
-          Text('Savings Account •••• 4821', style: TextStyle(fontSize: 20, fontWeight: FontWeight.w800)),
-          Text('All entries are fictional demo data.', style: TextStyle(color: Colors.black54)),
+          Text('Savings Account •••• 0256', style: TextStyle(fontSize: 20, fontWeight: FontWeight.w800)),
+          Text('Recent Transactions.', style: TextStyle(color: Colors.black54)),
           SizedBox(height: 12),
-          TransactionTile(title: 'Demo UPI Payment', subtitle: '05 Oct • Simulation', amount: '- ₹420.00'),
-          TransactionTile(title: 'Demo Credit', subtitle: '04 Oct • Simulation', amount: '+ ₹2,500.00'),
-          TransactionTile(title: 'Demo Recharge', subtitle: '03 Oct • Simulation', amount: '- ₹299.00'),
-          TransactionTile(title: 'Demo Shopping', subtitle: '01 Oct • Simulation', amount: '- ₹850.00'),
+          TransactionTile(title: 'MACHINDRE VINIT NILESH', subtitle: '01 Oct, 2026 • UPI/615092084456', amount: '+ ₹20,000.00'),
+          TransactionTile(title: 'MAFROOZA BANU', subtitle: '30 Sep, 2026 • UPI/663989482173', amount: '- ₹100.00'),
+          TransactionTile(title: 'NAZIYA ZEHRA', subtitle: '30 Sep, 2026 • UPI/663876995223', amount: '- ₹610.00'),
+          TransactionTile(title: 'YUVRAJ', subtitle: '28 Sep, 2026 • UPI/627409836295', amount: '+ ₹220.00'),
+          TransactionTile(title: 'Hyder Masoom', subtitle: '28 Sep, 2026 • UPI/67853249071', amount: '- ₹190.00'),
         ]),
       );
 }
@@ -400,8 +401,7 @@ class ProfilePage extends StatelessWidget {
           const SizedBox(height: 14),
           const Card(child: ListTile(
             leading: CircleAvatar(backgroundColor: idbiGreen, foregroundColor: Colors.white, child: Icon(Icons.person)),
-            title: Text('Demo Customer', style: TextStyle(fontWeight: FontWeight.w800)),
-            subtitle: Text('Student project profile • No real bank account'),
+            title: Text('Mirza Arshi Abbas', style: TextStyle(fontWeight: FontWeight.w800)),
           )),
           const Card(child: ListTile(leading: Icon(Icons.security), title: Text('Security Settings'), trailing: Icon(Icons.chevron_right))),
           const Card(child: ListTile(leading: Icon(Icons.language), title: Text('Language'), trailing: Icon(Icons.chevron_right))),
@@ -483,7 +483,7 @@ class _CardControlsPageState extends State<CardControlsPage> {
             child: const Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
               Text('DEMO DEBIT CARD', style: TextStyle(color: Colors.white, fontWeight: FontWeight.w800)),
               Spacer(),
-              Text('••••  ••••  ••••  4821', style: TextStyle(color: Colors.white, fontSize: 22, fontWeight: FontWeight.w700)),
+              Text('••••  ••••  ••••  0256', style: TextStyle(color: Colors.white, fontSize: 22, fontWeight: FontWeight.w700)),
               SizedBox(height: 10),
               Text('DEMO CUSTOMER      VALID 12/30', style: TextStyle(color: Colors.white70)),
             ]),
@@ -539,7 +539,7 @@ class InfoPage extends StatelessWidget {
             SizedBox(height: 14),
             Text('Student project module', style: TextStyle(fontSize: 23, fontWeight: FontWeight.w800)),
             SizedBox(height: 8),
-            Text('This screen demonstrates a banking-app interface using fictional local data. It does not connect to IDBI Bank, UPI, NPCI or any payment network.'),
+            Text('IDBI Bank, UPI, NPCI or any payment network.'),
           ]),
         ),
       );
